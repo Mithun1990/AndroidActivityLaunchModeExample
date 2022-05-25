@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnStartA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start A Activity"
+            app:layout_constraintEnd_toStartOf="@+id/btnStartB"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnStartB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start B Activity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/btnStartA"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_first">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnStartC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start C Activity"
+            app:layout_constraintEnd_toStartOf="@+id/btnStartD"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnStartD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start D Activity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/btnStartC"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/first_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:padding="5dp"
+        android:text="Select which activity you want to test?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_second" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:entries="@array/activities"
+        android:padding="5dp"
+        android:text="Select which activity you want to test?"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/first_title">
+
+    </Spinner>
+
+    <TextView
+        android:id="@+id/second_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:padding="5dp"
+        android:text="Select the prior selected launch mode from below."
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/second_title">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDefault"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Default"
+            app:layout_constraintEnd_toStartOf="@+id/btnSingleTop"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSingleTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Single Top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/btnDefault"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_four"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_third">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSingleTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Single Task"
+            app:layout_constraintEnd_toStartOf="@+id/btnSingleInstance"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSingleInstance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Single Instance"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/btnSingleTask"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

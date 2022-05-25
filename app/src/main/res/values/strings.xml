@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DifferentActivityLaunchModeAndroid</string>
+    <string-array name="activities">
+        <item>Activity A</item>
+        <item>Activity B</item>
+        <item>Activity C</item>
+        <item>Activity D</item>
+    </string-array>
+</resources>
